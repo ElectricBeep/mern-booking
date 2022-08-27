@@ -1,0 +1,32 @@
+.register {
+    height: 100vh;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.rInput {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.registerButton {
+    border: none;
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.registerButton:hover {
+    background-color: rgb(122, 188, 122);
+}

@@ -1,0 +1,55 @@
+.login {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.lInput {
+    height: 30px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.lButton {
+    border: none;
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.lButton:hover {
+    background-color: rgb(122, 188, 122);
+}
+
+.lButton:disabled {
+    background-color: rgb(122, 188, 122);
+    cursor: not-allowed;
+}
+
+.lFooterText {
+    margin-top: 20px;
+    font-size: 12px;
+    padding: 15px 0;
+    text-align: center;
+    line-height: 20px;
+    border-top: 0.1px solid lightgray;
+    border-bottom: 0.1px solid lightgray;
+}
+
+.lFooterCopyright {
+    font-size: 12px;
+    padding: 15px 0;
+    text-align: center;
+    line-height: 20px;
+}
