@@ -18,7 +18,7 @@ const List = () => {
     const [max, setMax] = useState(undefined); //For searching by price
 
     const { data, loading, error, reFetch } = useFetch(
-        `https://mernbooking-backend.herokuapp.com/api/hotels?city=${destination}&min=${min || 0}&max=${max || 999}`
+        `${process.env.REACT_APP_BASE_URL}hotels?city=${destination}&min=${min || 0}&max=${max || 999}`
     );
     //Taking destination from state
 

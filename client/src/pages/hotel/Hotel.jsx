@@ -35,7 +35,7 @@ const Hotel = () => {
     const location = useLocation(); //To get hotel id from url
     const hotelId = location.pathname.split("/")[2];
 
-    const { data, loading } = useFetch(`https://mernbooking-backend.herokuapp.com/api/hotels/find/${hotelId}`);
+    const { data, loading } = useFetch(`${process.env.REACT_APP_BASE_URL}hotels/find/${hotelId}`);
 
     const { dates, options } = useContext(SearchContext);
 

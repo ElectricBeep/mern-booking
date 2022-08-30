@@ -10,7 +10,7 @@ const Widget = ({ type }) => {
     const [rooms, setRooms] = useState([]);
     const [roomPrecentage, setRoomPrecentage] = useState(0);
 
-    const { data } = useFetch(type === "user" ? "/users/stats/permonth" : "/rooms/stats/roomstats");
+    const { data } = useFetch(type === "user" ? `${process.env.REACT_APP_BASE_URL}/users/stats/permonth` : `${process.env.REACT_APP_BASE_URL}/rooms/stats/roomstats`);
 
     useEffect(() => {
         if (type === "user") {

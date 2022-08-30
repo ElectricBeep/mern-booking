@@ -11,7 +11,7 @@ const Reserve = ({ setOpen, hotelId }) => {
     const [selectedRooms, setSelectedRooms] = useState([]);
 
     //Fetching data from mongo
-    const { data, error } = useFetch(`https://mernbooking-backend.herokuapp.com/api/hotels/room/${hotelId}`);
+    const { data, error } = useFetch(`${process.env.REACT_APP_BASE_URL}hotels/room/${hotelId}`);
 
     //To get dates for when room is unavailable
     const { dates } = useContext(SearchContext);
@@ -60,7 +60,7 @@ const Reserve = ({ setOpen, hotelId }) => {
     const handleClick = async () => {
         try {
             await Promise.all(selectedRooms.map((roomId) => {
-                const res = axios.put(`https://mernbooking-backend.herokuapp.com/api/rooms/availability/${roomId}`, { dates: allDates });
+                const res = axios.put(`${process.env.REACT_APP_BASE_URL}rooms/availability/${roomId}`, { dates: allDates });
                 return res.data;
             }));
             setOpen(false);

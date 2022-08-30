@@ -21,7 +21,7 @@ const Register = () => {
         e.preventDefault();
         const register = async () => {
             try {
-                const res = await axios.post("https://mernbooking-backend.herokuapp.com/api/auth/register", credentials);
+                const res = await axios.post(`${process.env.REACT_APP_BASE_URL}auth/register`, credentials);
                 navigate("/login");
             } catch (err) {
                 console.log(err);

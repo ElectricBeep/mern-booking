@@ -12,7 +12,7 @@ const NewRoom = () => {
     const [rooms, setRooms] = useState([]); //for adding room numbers
 
     //Get Rooms data
-    const { data, loading, error } = useFetch("/hotels");
+    const { data, loading, error } = useFetch(`${process.env.REACT_APP_BASE_URL}/hotels`);
 
     //Update state with input values
     const handleChange = (e) => {
@@ -25,7 +25,7 @@ const NewRoom = () => {
         const roomNumbers = rooms.split(",").map((room) => ({ number: room })); //We need room
         //numbers to be inside object since Room.js model
         try {
-            await axios.post(`/rooms/${hotelId}`, { ...info, roomNumbers });
+            await axios.post(`${process.env.REACT_APP_BASE_URL}/rooms/${hotelId}`, { ...info, roomNumbers });
         } catch (err) {
             error(err);
         };

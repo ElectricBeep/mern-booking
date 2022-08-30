@@ -2,7 +2,7 @@ import "./propertyList.css";
 import useFetch from "../../hooks/useFetch";
 
 const PropertyList = () => {
-    const { data, loading } = useFetch("https://mernbooking-backend.herokuapp.com/api/hotels/countByType");
+    const { data, loading } = useFetch(`${process.env.REACT_APP_BASE_URL}hotels/countByType`);
 
     const images = [
         "https://t-cf.bstatic.com/xdata/images/hotel/square200/244759766.webp?k=e87b68540513c463079b85ec084d1ee3b801f8b139df32e137efda0b74757ec2&o=",

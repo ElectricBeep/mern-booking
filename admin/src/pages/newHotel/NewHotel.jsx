@@ -13,7 +13,7 @@ const NewHotel = () => {
     const [rooms, setRooms] = useState([]); //For rooms
 
     //Get Rooms data
-    const { data, loading, error } = useFetch("/rooms");
+    const { data, loading, error } = useFetch(`${process.env.REACT_APP_BASE_URL}/rooms`);
 
     //Update state with input values
     const handleChange = (e) => {
@@ -37,7 +37,7 @@ const NewHotel = () => {
                     data.append("upload_preset", "uploads");
 
                     const uploadRes = await axios.post(
-                        "https://api.cloudinary.com/v1_1/dwbhufugp/image/upload",
+                        process.env.REACT_APP_UPLOAD_URL,
                         data
                     );
                     const { url } = uploadRes.data; //Getting image url for storing to mongo
@@ -52,7 +52,7 @@ const NewHotel = () => {
                 photos: list
             };
 
-            await axios.post("/hotels", newHotel);
+            await axios.post(`${process.env.REACT_APP_BASE_URL}/hotels`, newHotel);
         } catch (err) {
             error(err);
         };

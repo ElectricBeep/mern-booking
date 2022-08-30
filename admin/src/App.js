@@ -23,13 +23,6 @@ function App() {
 
   const { darkMode } = useContext(DarkModeContext);
 
-  // const { currentUser } = useContext(AuthContext);
-
-  // const RequireAuth = ({ children }) => {
-  //   return currentUser ? (children) : <Navigate to="/login" />
-  // };
-  // make it unable to see other pages if we don't have signed in user 
-
   const ProtecteRoute = ({ children }) => {
     const { user } = useContext(AuthContext);
 

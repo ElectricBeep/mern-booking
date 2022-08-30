@@ -2,7 +2,7 @@ import useFetch from "../../hooks/useFetch";
 import "./featured.css";
 
 const Featured = () => {
-    const { data, loading } = useFetch("https://mernbooking-backend.herokuapp.com/api/hotels/countByCity?cities=Berlin,Madrid,London");
+    const { data, loading } = useFetch(`${process.env.REACT_APP_BASE_URL}hotels/countByCity?cities=Berlin,Madrid,London`);
 
     return (
         <div className="featured">

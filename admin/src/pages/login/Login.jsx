@@ -1,54 +1,3 @@
-// import { useContext, useState } from "react";
-// import "./login.scss";
-// import { signInWithEmailAndPassword } from "firebase/auth";
-// import { auth } from "../../firebase";
-// import { useNavigate } from "react-router-dom";
-// import { AuthContext } from "../../context/AuthContext";
-
-// const Login = () => {
-
-//     const [error, setError] = useState(false);
-//     const [email, setEmail] = useState("");
-//     const [password, setPassword] = useState("");
-
-//     const naviagte = useNavigate();
-
-//     const { dispatch } = useContext(AuthContext);
-
-//     const handleLogin = (e) => {
-//         e.preventDefault();
-
-//         signInWithEmailAndPassword(auth, email, password)
-//             .then((userCredential) => {
-
-//                 const user = userCredential.user;
-//                 dispatch({ type: "LOGIN", payload: user });
-//                 naviagte("/");
-//             })
-//             .catch((error) => {
-//                 setError(true);
-//             });
-//     };
-//     // firebase login
-
-//     return (
-//         <div className="login">
-//             <form onSubmit={handleLogin}>
-//                 <input type="email" placeholder="email" onChange={e => setEmail(e.target.value)} />
-//                 <input type="passowrd" placeholder="password" onChange={e => setPassword(e.target.value)} />
-//                 <button type="submit">Login</button>
-//                 {error && <span>Wrong email or password!</span>}
-//             </form>
-//         </div>
-//     )
-// }
-
-// export default Login
-
-
-
-
-
 import { useContext, useState } from "react";
 import "./login.scss";
 import { AuthContext } from "../../context/AuthContext";
@@ -73,7 +22,7 @@ const Login = () => {
         e.preventDefault();
         dispatch({ type: "LOGIN_START" });
         try {
-            const res = await axios.post("http://localhost:8800/api/auth/login", credentials);
+            const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/auth/login`, credentials);
             dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
             if (res.data.isAdmin) {
                 navigate("/");

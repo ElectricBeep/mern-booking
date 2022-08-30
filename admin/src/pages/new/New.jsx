@@ -23,7 +23,7 @@ const New = ({ inputs, title }) => {
         data.append("upload_preset", "uploads");
         try {
             const uploadRes = await axios.post(
-                "https://api.cloudinary.com/v1_1/dwbhufugp/image/upload",
+                process.env.REACT_APP_UPLOAD_URL,
                 data
             );
             const { url } = uploadRes.data; //Getting image url for storing to mongo
@@ -33,7 +33,7 @@ const New = ({ inputs, title }) => {
                 img: url
             };
 
-            await axios.post("/auth/register", newUser);
+            await axios.post(`${process.env.REACT_APP_BASE_URL}/auth/register`, newUser);
         } catch (err) {
             console.log(err);
         };

@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const Chart = ({ aspect, title }) => {
     const [stats, setStats] = useState([]);
 
-    const { data } = useFetch("/users/stats/permonth");
+    const { data } = useFetch(`${process.env.REACT_APP_BASE_URL}/users/stats/permonth`);
 
     useEffect(() => {
         setStats(data);

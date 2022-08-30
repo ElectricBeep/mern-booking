@@ -14,7 +14,7 @@ const TableComponent = ({ type }) => {
     const [users, setUsers] = useState([]);
     const [hotels, setHotels] = useState([]);
 
-    const { data } = useFetch(type === "users" ? "/users" : "/hotels");
+    const { data } = useFetch(type === "users" ? `${process.env.REACT_APP_BASE_URL}/users` : `${process.env.REACT_APP_BASE_URL}/hotels`);
 
     useEffect(() => {
         if (type === "users") {
