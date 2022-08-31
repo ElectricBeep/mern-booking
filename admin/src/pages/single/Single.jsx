@@ -14,7 +14,7 @@ const Single = () => {
     const page = location.pathname.split("/")[1];
     const path = location.pathname;
 
-    const { data } = useFetch(`${process.env.REACT_APP_BASE_URL}${path}`);
+    const { data } = useFetch(`${process.env.REACT_APP_BASE_URL}/${path}`);
 
     useEffect(() => {
         setDataItem(data);

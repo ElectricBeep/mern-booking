@@ -12,7 +12,7 @@ const Datatable = ({ columns }) => {
     const location = useLocation();
     const path = location.pathname.split("/")[1];
 
-    const { data, error } = useFetch(`${process.env.REACT_APP_BASE_URL}${path}`);
+    const { data, error } = useFetch(`${process.env.REACT_APP_BASE_URL}/${path}`);
 
     useEffect(() => {
         setList(data);
@@ -21,7 +21,7 @@ const Datatable = ({ columns }) => {
     //Deleting users
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`${process.env.REACT_APP_BASE_URL}${path}/${id}`);
+            await axios.delete(`${process.env.REACT_APP_BASE_URL}/${path}/${id}`);
         } catch (err) {
             error(err);
         };
