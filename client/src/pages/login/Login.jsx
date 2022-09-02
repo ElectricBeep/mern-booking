@@ -62,6 +62,10 @@ const Login = () => {
                         By signing in or creating an account, you agree with our Terms &
                         <br />
                         Conditions and Privacy Statement
+                        <br />
+                        <span>
+                            Admin? <a href="https://admin-mern-booker.netlify.app" rel="noreferrer" target="_blank" className="link"><b style={{ color: "green" }}>Sign in</b></a>
+                        </span>
                     </div>
                     <div className="lFooterCopyright">
                         All rights reserved.
