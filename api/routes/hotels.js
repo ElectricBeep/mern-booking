@@ -20,10 +20,10 @@ router.get("/:id", getHotel);
 router.get("/", getAllHotels);
 
 //GET CITIES OF HOTELS
-router.get("/countByCity", countByCity);
+router.get("/hotelCount/countByCity", countByCity);
 
 //GET TYPES OF PROPERTIES
-router.get("/countByType", countByType);
+router.get("/hotelCount/countByType", countByType);
 
 //GET ROOMS
 router.get("/room/:id", getHotelRooms);
